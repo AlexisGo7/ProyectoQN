@@ -1,0 +1,52 @@
+/* @/app/globals.css - Versión con Gradiente Azul Oscuro/Gris */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --radius: 0.625rem;
+  
+  /* Nuevo Gradiente para el Fondo */
+  --color-gradient-start: #1a202c; /* Azul oscuro casi negro */
+  --color-gradient-end: #2d3748;   /* Gris oscuro azulado */
+
+  --color-background: var(--color-gradient-start); /* Por si necesitamos un color sólido en algún lugar */
+  --color-foreground: #e2e8f0;    /* Blanco muy ligero, casi gris claro, para el texto */
+  
+  --color-card: #2d3748; /* El mismo gris oscuro azulado del final del gradiente para las tarjetas */
+  --color-card-foreground: #cbd5e0; /* Un gris más claro para el texto dentro de las tarjetas */
+  
+  --color-primary: #facc15; /* Dorado (sin cambios, es el acento) */
+  --color-primary-foreground: #0b0b0b; /* Negro para texto sobre dorado */
+  
+  --color-border: #facc15; /* Dorado para bordes de acento */
+  --color-ring: #facc15; /* Dorado para anillos de focus */
+}
+
+.dark {
+  /* Puedes duplicar o ajustar los colores si quieres un modo oscuro diferente, 
+     pero con el gradiente, este .dark podría ser redundante o usarse para un ajuste sutil. */
+  --color-gradient-start: #1a202c; 
+  --color-gradient-end: #2d3748; 
+  --color-background: var(--color-gradient-start);
+  --color-foreground: #e2e8f0;
+  --color-card: #2d3748;
+  --color-card-foreground: #cbd5e0;
+  --color-primary: #facc15;
+  --color-primary-foreground: #0b0b0b;
+}
+
+/* Estilos Globales */
+body {
+  /* Aplicamos el gradiente al body */
+  background: linear-gradient(to bottom right, var(--color-gradient-start), var(--color-gradient-end));
+  background-attachment: fixed; /* Esto asegura que el gradiente ocupe toda la ventana */
+  color: var(--color-foreground);
+  font-family: sans-serif;
+}
+
+a {
+  color: var(--color-primary);
+  @apply hover:underline; 
+}
